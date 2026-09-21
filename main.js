@@ -7,6 +7,12 @@ const petalLayer = document.getElementById("petalLayer");
 const petalButton = document.getElementById("petalButton");
 const photo = document.getElementById("dennisPhoto");
 const photoPlaceholder = document.getElementById("photoPlaceholder");
+const backgroundMusic = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+const musicIcon = document.getElementById("musicIcon");
+
+const MUSIC_VOLUME = 0.35;
+let musicFadeTimer = null;
 
 function randomBetween(min, max) {
   return Math.random() * (max - min) + min;
@@ -60,7 +66,79 @@ function rainPetals(amount) {
   petalLayer.appendChild(fragment);
 }
 
+function updateMusicButton(isPlaying) {
+  if (!musicButton || !musicIcon) return;
+
+  musicIcon.textContent = isPlaying ? "🔊" : "🔇";
+  musicButton.classList.toggle("is-paused", !isPlaying);
+  musicButton.setAttribute("aria-label", isPlaying ? "Pausar música" : "Reproducir música");
+  musicButton.title = isPlaying ? "Pausar música" : "Reproducir música";
+}
+
+function fadeMusicTo(targetVolume, duration) {
+  if (!backgroundMusic) return;
+
+  window.clearInterval(musicFadeTimer);
+
+  const startVolume = backgroundMusic.volume;
+  const steps = Math.max(1, Math.round(duration / 60));
+  const increment = (targetVolume - startVolume) / steps;
+  let currentStep = 0;
+
+  musicFadeTimer = window.setInterval(function () {
+    currentStep += 1;
+
+    if (currentStep >= steps) {
+      backgroundMusic.volume = targetVolume;
+      window.clearInterval(musicFadeTimer);
+      musicFadeTimer = null;
+      return;
+    }
+
+    backgroundMusic.volume = Math.min(1, Math.max(0, backgroundMusic.volume + increment));
+  }, 60);
+}
+
+function startMusic() {
+  if (!backgroundMusic) return;
+
+  window.clearInterval(musicFadeTimer);
+  backgroundMusic.volume = 0.02;
+
+  const playPromise = backgroundMusic.play();
+
+  if (playPromise && typeof playPromise.then === "function") {
+    playPromise
+      .then(function () {
+        updateMusicButton(true);
+        fadeMusicTo(MUSIC_VOLUME, 1800);
+      })
+      .catch(function () {
+        updateMusicButton(false);
+      });
+  } else {
+    updateMusicButton(true);
+    fadeMusicTo(MUSIC_VOLUME, 1800);
+  }
+}
+
+function toggleMusic() {
+  if (!backgroundMusic) return;
+
+  if (backgroundMusic.paused) {
+    startMusic();
+  } else {
+    window.clearInterval(musicFadeTimer);
+    musicFadeTimer = null;
+    backgroundMusic.pause();
+    updateMusicButton(false);
+  }
+}
+
 function openGarden() {
+  musicButton.hidden = false;
+  startMusic();
+
   intro.classList.add("is-open");
   experience.classList.add("is-visible");
   experience.setAttribute("aria-hidden", "false");
@@ -146,4 +224,14 @@ openButton.addEventListener("click", openGarden);
 finalButton.addEventListener("click", revealSecret);
 petalButton.addEventListener("click", function () {
   rainPetals(24);
+});
+
+musicButton.addEventListener("click", toggleMusic);
+
+backgroundMusic.addEventListener("play", function () {
+  updateMusicButton(true);
+});
+
+backgroundMusic.addEventListener("pause", function () {
+  updateMusicButton(false);
 });
