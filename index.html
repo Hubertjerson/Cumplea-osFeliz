@@ -176,11 +176,9 @@
           <p class="eyebrow">PARA ACOMPAÑAR ESTE DETALLE</p>
           <h2>Ocean · KAROL G</h2>
           <p>
-            Una canción suave para escuchar mientras recorres este pequeño jardín.
+            Una canción suave que acompaña este pequeño jardín desde que recibes tus flores.
           </p>
-          <a class="secondary-button" href="https://open.spotify.com/search/Ocean%20KAROL%20G" target="_blank" rel="noreferrer">
-            Escuchar en Spotify ↗
-          </a>
+          <span class="now-playing">♪ Sonando en este jardín</span>
         </div>
       </div>
     </section>
@@ -217,6 +215,12 @@
       <small>Un poquito de código, muchas flores y una intención bastante obvia.</small>
     </footer>
   </main>
+
+  <audio id="backgroundMusic" src="assets/musica.mp3" preload="auto" loop></audio>
+
+  <button id="musicButton" class="floating-music" type="button" aria-label="Pausar música" title="Pausar música" hidden>
+    <span id="musicIcon" aria-hidden="true">🔊</span>
+  </button>
 
   <button id="petalButton" class="floating-petal" type="button" aria-label="Lanzar pétalos amarillos" hidden>
     🌼
