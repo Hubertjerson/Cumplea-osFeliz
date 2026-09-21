@@ -1,1 +1,227 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Para Milagros ✨</title><style>*{box-sizing:border-box}body{margin:0;font-family:Georgia,serif;background:#fff6f8;color:#452d35;min-height:100vh}.page{max-width:720px;margin:auto;padding:34px 20px 60px;text-align:center}.envelope{min-height:82vh;display:flex;align-items:center;justify-content:center;flex-direction:column}.heart{font-size:64px;animation:p 1.8s infinite}.eyebrow{font:12px Arial;letter-spacing:3px;color:#9c697a}.envelope h1{font-size:42px;margin:12px 0 8px}.envelope p{color:#86616d;font-size:18px}.btn{border:0;border-radius:999px;background:#b95d7c;color:white;padding:15px 26px;font-weight:bold;font-size:16px;cursor:pointer;box-shadow:0 10px 28px #b95d7c33}.letter{display:none;animation:fade .8s ease}.age{font-size:96px;color:#b95d7c;font-style:italic;line-height:1;margin-top:25px}.small{color:#9b7480;font-style:italic}.letter h2{font-size:36px;font-weight:normal}.letter h2 em{color:#b95d7c}.lead{font-size:18px;line-height:1.8;color:#775660}.divider{margin:35px auto;color:#b95d7c}.message{text-align:left;font-size:18px;line-height:1.95}.message p{margin:0 0 24px}.secret{border-left:3px solid #b95d7c;background:#fbe7ed;padding:22px;border-radius:0 18px 18px 0;margin:30px 0;font-style:italic}.wish{margin-top:38px;border:1px solid #eccbd5;background:white;padding:30px 22px;border-radius:25px}.wish h3{font-size:26px;font-weight:normal}.surprise{display:none;border-top:1px solid #edd4dc;margin-top:26px;padding-top:25px;animation:fade .8s ease}.surprise.show{display:block}.flirty{color:#a64969;font-style:italic}.footer{font:11px Arial;letter-spacing:2px;color:#a77d89;margin-top:38px}.confetti{position:fixed;top:-30px;pointer-events:none;animation:fall 3s linear forwards}@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@keyframes p{50%{transform:scale(1.15)}}@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}@media(max-width:500px){.envelope h1{font-size:34px}.letter h2{font-size:30px}.age{font-size:80px}.message{font-size:17px}}</style></head><body><main class="page"><section id="cover" class="envelope"><div class="heart">💌</div><p class="eyebrow">HAY ALGO PARA TI</p><h1>Para Milagros</h1><p>Un pequeño detalle por tus 28 ✨</p><button id="open" class="btn">Abrir 💗</button></section><section id="letter" class="letter"><p class="eyebrow">UN DÍA PARA CELEBRARTE ✨</p><div class="age">28</div><p class="small">vueltas al sol ☀️</p><h2>Feliz cumpleaños,<br><em>Milagros Lizette</em> ♡</h2><p class="lead">Hoy no quería limitarme a decirte solamente “feliz cumpleaños”. Quería dejarte un pequeño detalle hecho especialmente para ti.</p><div class="divider">──────── ♡ ────────</div><div class="message"><p>Espero que estos <strong>28</strong> lleguen acompañados de días que te hagan sonreír sin darte cuenta, personas que te quieran bonito y momentos que algún día recuerdes pensando: <em>“qué lindo fue vivir esto”.</em></p><p>Que nunca te falten motivos para ilusionarte, lugares nuevos por conocer, abrazos que se sientan como hogar y esas pequeñas casualidades que terminan convirtiéndose en recuerdos enormes.</p><p>Y entre tantos deseos de cumpleaños, voy a permitirme uno un poquito egoísta…</p><div class="secret">Ojalá este nuevo año también me regale alguna que otra oportunidad de ser yo quien provoque una de esas sonrisas tuyas. 🤍</div><p>No sé exactamente qué estará preparando la vida para ti, pero espero que sea algo precioso. Porque hay personas que tienen una forma especial de hacerse notar… y sospecho que tú eres una de ellas.</p></div><section class="wish"><div style="font-size:42px">🎂</div><h3>Pide un deseo, Milagros</h3><p>Pero no lo digas en voz alta… dicen que así tiene más posibilidades de cumplirse.</p><button id="wish" class="btn">Ya pedí mi deseo ✨</button><div id="surprise" class="surprise"><div class="heart">♡</div><h3>Entonces solo queda una cosa…</h3><p>Que la vida encuentre la manera de sorprenderte incluso más bonito de lo que acabas de imaginar.</p><p class="flirty">Y si en ese deseo aparece cierto alguien que te preparó esta pequeña página… prometo no hacer demasiadas preguntas. 😉</p><strong>Feliz cumpleaños, Milagros Lizette Rodríguez Ortiz ♡</strong><p class="small">Que tus 28 sean inolvidables.</p></div></section><div class="footer">HECHO CON UN POQUITO DE CÓDIGO, MUCHO CARIÑO Y UNA INTENCIÓN BASTANTE OBVIA ♡</div></section></main><script>const cover=document.getElementById('cover'),letter=document.getElementById('letter');document.getElementById('open').addEventListener('click',()=>{cover.style.display='none';letter.style.display='block';window.scrollTo({top:0,behavior:'smooth'});rain(20)});document.getElementById('wish').addEventListener('click',function(){document.getElementById('surprise').classList.add('show');this.textContent='Deseo guardado ♡';this.disabled=true;rain(28)});function rain(n){const a=['♡','✨','✦','💗'];for(let i=0;i<n;i++){let s=document.createElement('span');s.className='confetti';s.textContent=a[i%a.length];s.style.left=Math.random()*100+'vw';s.style.fontSize=(14+Math.random()*16)+'px';s.style.animationDelay=Math.random()*1.5+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),5000)}};</script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7c948">
+  <meta name="description" content="Un pequeño jardín de flores amarillas hecho especialmente para Dennis.">
+  <title>Flores amarillas para Dennis 🌼</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="locked">
+  <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
+
+  <section id="intro" class="intro" aria-labelledby="introTitle">
+    <div class="intro-glow"></div>
+    <div class="intro-card">
+      <div class="mini-bouquet" aria-hidden="true">
+        <span>🌼</span><span>🌻</span><span>🌼</span>
+      </div>
+      <p class="eyebrow">21 DE SEPTIEMBRE · UN DETALLE PARA TI</p>
+      <h1 id="introTitle">Dennis, tengo<br><em>flores para ti</em></h1>
+      <p class="intro-copy">
+        No son las que se marchitan en unos días.<br>
+        Estas vienen con un poquito de código, cariño y una intención bonita.
+      </p>
+      <button id="openExperience" class="primary-button" type="button">
+        <span>Recibir mis flores</span>
+        <span aria-hidden="true">🌼</span>
+      </button>
+      <p class="tap-hint">Toca para abrir tu pequeño jardín</p>
+    </div>
+
+    <div class="intro-garden" aria-hidden="true">
+      <div class="hill hill-one"></div>
+      <div class="hill hill-two"></div>
+      <div id="introFlowers" class="flower-field"></div>
+    </div>
+  </section>
+
+  <main id="experience" class="experience" aria-hidden="true">
+    <header class="hero section-shell">
+      <div class="hero-sun" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">HOY LAS FLORES AMARILLAS TIENEN NOMBRE</p>
+        <h2>Son para ti,<br><em>Dennis.</em></h2>
+        <p>
+          Porque a veces un detalle pequeño puede decir mucho más que un mensaje rápido.
+          Y hoy quería hacer algo que se sintiera un poquito más especial.
+        </p>
+      </div>
+
+      <div class="hero-bouquet reveal" aria-hidden="true">
+        <div class="bouquet-halo"></div>
+        <div class="bouquet-flowers">
+          <span>🌼</span>
+          <span>🌻</span>
+          <span>🌼</span>
+          <span>🌼</span>
+          <span>🌻</span>
+          <span>🌼</span>
+          <span>🌼</span>
+        </div>
+        <div class="bouquet-wrap"></div>
+      </div>
+
+      <a class="scroll-cue" href="#letter" aria-label="Seguir leyendo">
+        <span>Sigue bajando</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+    </header>
+
+    <section class="meaning section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">UN 21 DE SEPTIEMBRE DIFERENTE</p>
+        <h2>Un jardín para recordarte algo bonito</h2>
+      </div>
+
+      <div class="meaning-card reveal">
+        <div class="quote-mark" aria-hidden="true">“</div>
+        <p>
+          No te regalo flores amarillas solo porque hoy toca.
+          Te las regalo porque me gusta la idea de que, entre tantos días normales,
+          exista uno que pueda sacarte una sonrisa inesperada.
+        </p>
+        <span>Y si esa sonrisa la provoqué yo… mejor todavía. ✨</span>
+      </div>
+
+      <div id="mainFlowerField" class="wide-flower-field reveal" aria-hidden="true"></div>
+    </section>
+
+    <section id="letter" class="letter-section section-shell">
+      <div class="photo-side reveal">
+        <div class="photo-frame">
+          <div class="tape tape-left"></div>
+          <div class="tape tape-right"></div>
+          <img id="dennisPhoto" src="assets/dennis.jpg" alt="Una foto especial de Dennis">
+          <div id="photoPlaceholder" class="photo-placeholder">
+            <span aria-hidden="true">📷</span>
+            <strong>Aquí va una foto tuya</strong>
+            <small>de esas que merecen quedarse en un detalle bonito</small>
+          </div>
+        </div>
+        <p class="photo-caption">Una foto bonita para una persona que sigue siendo especial.</p>
+      </div>
+
+      <article class="letter-card reveal">
+        <p class="letter-kicker">PARA DENNIS 💛</p>
+        <h2>No quería mandarte<br>solo un “feliz día”</h2>
+
+        <div class="letter-copy">
+          <p>
+            Nuestra historia quizá no ha sido una línea recta, y probablemente por eso
+            valoro aún más que la vida nos esté dando la oportunidad de volver a coincidir.
+          </p>
+          <p>
+            No quiero correr ni llenar esto de promesas enormes. Me gusta más la idea de
+            volver a conocernos con calma, quedarnos con lo bueno, aprender de lo vivido
+            y dejar que las cosas bonitas encuentren su propio ritmo.
+          </p>
+          <p>
+            Pero sí hay algo que puedo decirte con total seguridad:
+            <strong>me alegra tenerte otra vez un poquito más cerca.</strong>
+          </p>
+          <p>
+            Así que hoy estas flores amarillas son mi manera de decirte que todavía tengo
+            ganas de sorprenderte, de hacerte sonreír y de descubrir qué puede pasar si
+            esta vez cuidamos bonito lo que estamos construyendo.
+          </p>
+        </div>
+
+        <div class="signature">
+          <span>Con cariño,</span>
+          <strong>Jerson</strong>
+          <span class="signature-flower" aria-hidden="true">🌼</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="wishes section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">TRES COSAS QUE ME GUSTARÍA VIVIR CONTIGO</p>
+        <h2>Sin prisa. Sin presión. Solo bonito.</h2>
+      </div>
+
+      <div class="wish-grid">
+        <article class="wish-card reveal">
+          <span class="wish-number">01</span>
+          <div class="wish-icon" aria-hidden="true">☕</div>
+          <h3>Volver a conocernos</h3>
+          <p>Descubrir quiénes somos hoy, sin asumir que ya lo sabemos todo del otro.</p>
+        </article>
+        <article class="wish-card reveal">
+          <span class="wish-number">02</span>
+          <div class="wish-icon" aria-hidden="true">✨</div>
+          <h3>Crear momentos nuevos</h3>
+          <p>Más risas, más conversaciones largas y recuerdos que no necesiten explicación.</p>
+        </article>
+        <article class="wish-card reveal">
+          <span class="wish-number">03</span>
+          <div class="wish-icon" aria-hidden="true">💛</div>
+          <h3>Ver qué pasa</h3>
+          <p>Sin forzar el final de la historia; disfrutando de cada página mientras llega.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="music-section section-shell reveal">
+      <div class="music-card">
+        <div class="record" aria-hidden="true">
+          <div class="record-center">🌼</div>
+        </div>
+        <div class="music-copy">
+          <p class="eyebrow">PARA ACOMPAÑAR ESTE DETALLE</p>
+          <h2>Ocean · KAROL G</h2>
+          <p>
+            Una canción suave para escuchar mientras recorres este pequeño jardín.
+          </p>
+          <a class="secondary-button" href="https://open.spotify.com/search/Ocean%20KAROL%20G" target="_blank" rel="noreferrer">
+            Escuchar en Spotify ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale section-shell">
+      <div class="finale-card reveal">
+        <div class="finale-flowers" aria-hidden="true">🌼 🌻 🌼</div>
+        <p class="eyebrow">ANTES DE IRTE…</p>
+        <h2>Hay una última cosita.</h2>
+        <p>
+          Este detalle termina aquí solo si tú quieres.
+          Hay un mensaje escondido detrás de ese botón.
+        </p>
+        <button id="finalButton" class="primary-button" type="button">
+          <span>Descubrirlo</span>
+          <span aria-hidden="true">💛</span>
+        </button>
+
+        <div id="secretMessage" class="secret-message" aria-hidden="true">
+          <div class="secret-line"></div>
+          <p>
+            Si esta nueva oportunidad que estamos teniendo sigue floreciendo,
+            me gustaría seguir siendo parte de tus sonrisas…
+            y quizás conquistarte otra vez, pero esta vez <strong>más bonito.</strong>
+          </p>
+          <span class="secret-sign">— Jerson 🌼</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-flower" aria-hidden="true">🌻</div>
+      <p>Hecho especialmente para Dennis · 21 de septiembre</p>
+      <small>Un poquito de código, muchas flores y una intención bastante obvia.</small>
+    </footer>
+  </main>
+
+  <button id="petalButton" class="floating-petal" type="button" aria-label="Lanzar pétalos amarillos" hidden>
+    🌼
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>
