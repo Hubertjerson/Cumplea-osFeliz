@@ -45,7 +45,9 @@ function rainPetals(amount) {
     petal.style.setProperty("--left", randomBetween(0, 98) + "vw");
     petal.style.setProperty("--size", randomBetween(14, 27) + "px");
     petal.style.setProperty("--opacity", randomBetween(0.55, 0.95).toFixed(2));
-    const drift = randomBetween(-100, 100);\n    petal.style.setProperty("--drift", drift + "px");\n    petal.style.setProperty("--drift-end", (drift * -0.45) + "px");
+    const drift = randomBetween(-100, 100);
+    petal.style.setProperty("--drift", drift + "px");
+    petal.style.setProperty("--drift-end", (drift * -0.45) + "px");
     petal.style.setProperty("--fall-duration", randomBetween(4.2, 7.2) + "s");
     petal.style.setProperty("--fall-delay", randomBetween(0, 1.1) + "s");
     fragment.appendChild(petal);
